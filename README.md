@@ -19,7 +19,9 @@ curl --help
 # return the current date and time
 date
 
-Monitoring performance and status
+
+
+# Monitoring performance and status
 # list selection of or all running processes and their PIDs
 ps
 ps -e
@@ -30,7 +32,9 @@ top
 # list mounted file systems and usage
 df
 
-Working with files
+
+
+# Working with files
 # copy a file
 cp file.txt new_path/new_name.txt
 
@@ -57,7 +61,9 @@ grep -iw hello \*.txt
 # return file names with lines matching the pattern 'hello' from files matching a filename pattern
 grep -l hello \*.txt
 
-Navigating and working with directories
+
+
+# Navigating and working with directories
 # list files and directories by date, newest last
 ls -lrt
 
@@ -78,7 +84,9 @@ cd another_directory
 # remove directory, verbosely
 rmdir temp_directory -v
 
-Printing file and string contents
+
+
+# Printing file and string contents
 # print file contents
 cat my_shell_script.sh
 
@@ -95,7 +103,9 @@ tail -10 data_table.csv
 echo "I am not a robot"
 echo "I am $USERNAME"
 
-Compression and archiving
+
+
+# Compression and archiving
 # archive a set of files
 tar -cvf my_archive.tar.gz file1 file2 file3
 
@@ -107,7 +117,9 @@ zip my_zipped_folders.zip directory1 directory2
 unzip my_zipped_file.zip
 unzip my_zipped_file.zip -d extract_to_this_direcory
 
-Performing network operations
+
+
+# Performing network operations
 # print hostname
 hostname
 
@@ -127,7 +139,9 @@ wget <url>
 Bash shebang
 #!/bin/bash
 
-Pipes and Filters
+  
+  
+# Pipes and Filters
 # chain filter commands using the pipe operator
 ls | sort -r
 
@@ -151,7 +165,9 @@ env
 export my_planet
 export my_galaxy='Milky Way'
 
-Metacharacters
+  
+  
+# Metacharacters
 # comments
 # The shell will not respond to this message
 
@@ -164,7 +180,9 @@ ls *.json
 # single character wildcard
 ls file_2021-06-??.json
 
-Quoting
+  
+  
+# Quoting
 # single quotes - interpret literally
 echo 'My home directory can be accessed by entering: echo $HOME'
 
@@ -174,7 +192,9 @@ echo "My home directory is $HOME"
 # backslash - escape metacharacter interpretation
 echo "This dollar sign should render: \$"
 
-I/O Redirection
+
+  
+# I/O Redirection
 # redirect output to file
 echo 'Write this text to file x' > x
 
@@ -193,22 +213,26 @@ $ tr “[a-z]” “[A-Z]” < a_text_file.txt
 # the input redirection above is equivalent to
 $cat a_text_file.txt | tr “[a-z]” “[A-Z]”
 
-Command Substitution
+                                      
+                                      
+# Command Substitution
 # capture output of a command and echo its value
 THE_PRESENT=$(date)
 echo "There is no time like $THE_PRESENT"
 
-Command line arguments
+# Command line arguments
 ./My_Bash_Script.sh arg1 arg2 arg3
 
-Batch vs. concurrent modes
+
+# Batch vs. concurrent modes
 # run commands sequentially
 start=$(date); ./MyBigScript.sh ; end=$(date)
 
 # run commands in parallel
 ./ETL_chunk_one_on_these_nodes.sh & ./ETL_chunk_two_on_those_nodes.sh
 
-Scheduling jobs with Cron
+                                      
+# Scheduling jobs with Cron
 # open crontab editor
 crontab -e
 
