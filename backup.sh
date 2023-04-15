@@ -16,8 +16,8 @@ then
 fi
 
 # [TASK 1]
-targetDirectory="/home/project"
-destinationDirectory="/home"
+targetDirectory=$1
+destinationDirectory=$2
 
 # [TASK 2]
 echo "$targetDirectory"
@@ -27,43 +27,47 @@ echo "$destinationDirectory"
 currentTS=$(date +%s)
 
 # [TASK 4]
-backupFileName="backup-$currentTS"
+backupFileName="backup-$currentTS.tar.gz"
+
 # We're going to:
   # 1: Go into the target directory
-  cd $targetDirectory
   # 2: Create the backup file
-  sudo tar -czvf "$backupFileName.tar.gz" "$targetDirectory/backup.sh"
   # 3: Move the backup file to the destination directory
-  sudo mv "$targetDirectory/$backupFileName.tar.gz" "$destinationDirectory"
 # To make things easier, we will define some useful variables...
 
 # [TASK 5]
-origAbsPath=pwd
+origAbsPath=$(pwd)
 
 # [TASK 6]
-cd $destinationDirectory # <-
-destDirAbsPath=pwd
+cd $destinationDirectory
+destAbsPath=$(pwd)
 
 # [TASK 7]
-cd $origAbsPath # <-
-cd $targetDirectory # <-
+cd $origAbsPath 
+cd $targetDirectory 
 
 # [TASK 8]
-yesterdayTS=
+yesterdayTS=$(($currentTS - 24 * 60 * 60))
 
-declare -a toBackup
+# [TASK 9]
+for file in $(ls) 
 
-for file in $() # [TASK 9]
 do
+
   # [TASK 10]
-  if (())
+  if ((date -r $file+%s > $yesterdayTS))
+
   then
     # [TASK 11]
+    toBackup+=($file)
+
   fi
 done
 
 # [TASK 12]
+tar -czvf $backupFileName ${toBackup[@]}
 
 # [TASK 13]
+mv $backupFileName $destAbsPath
 
 # Congratulations! You completed the final project for this course!
